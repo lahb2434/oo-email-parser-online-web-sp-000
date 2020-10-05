@@ -12,6 +12,10 @@ class EmailAddressParser
   end
   
   def parse 
-    @email.split.do |emails| 
+    @email.split.collect do |emails| 
+      emails.split(",")
+    end
+    .flatten.uniq 
+  end
   
 end
